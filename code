@@ -1,0 +1,21 @@
+`default_nettype none
+
+module halfadder(input wire a, input wire b, output wire c, output wire cin);
+  assign c = a^b;
+  assign cin = a&b;
+endmodule
+
+module fulladder(input wire d, input wire in, input wire e, output wire s, output wire cout);
+  wire int1, int2, int3;
+  halfadder inst1(.a(d), .b(e), .c(int1), .cin(int2));
+  halfadder inst2(.a(int1), .b(in), .c(s), .cin(int3));
+  assign cout = int3 | int2;
+endmodule
+
+module fourbitripple(input wire [3:0] a, input wire [3:0] b, input wire c, output wire [3:0] sum, output wire cout);
+  wire one, two, three;
+  fulladder inst1(.d(a[0]), .in(c), .e(b[0]), .s(sum[0]), .cout(one));
+  fulladder inst2(.d(a[1]), .in(one), .e(b[1]), .s(sum[1]), .cout(two));
+  fulladder inst3(.d(a[2]), .in(two), .e(b[2]), .s(sum[2]), .cout(three));
+  fulladder inst4(.d(a[3]), .in(three), .e(b[3]), .s(sum[3]), .cout(cout));
+endmodule
