@@ -1,0 +1,113 @@
+$date
+	Sat May 30 10:46:36 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_mag_comp_4bit_comb $end
+$var wire 1 ! O_lt $end
+$var wire 1 " O_gt $end
+$var wire 1 # O_eq $end
+$var reg 4 $ A [3:0] $end
+$var reg 4 % B [3:0] $end
+$scope module uut $end
+$var wire 4 & A [3:0] $end
+$var wire 1 ' A_eq_B_int $end
+$var wire 1 ( A_gt_B_int $end
+$var wire 1 ) A_lt_B_int $end
+$var wire 4 * B [3:0] $end
+$var wire 1 + E0 $end
+$var wire 1 , E1 $end
+$var wire 1 - E2 $end
+$var wire 1 . E3 $end
+$var wire 1 # O_eq $end
+$var wire 1 " O_gt $end
+$var wire 1 ! O_lt $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1.
+1-
+1,
+1+
+b0 *
+0)
+0(
+1'
+b0 &
+b0 %
+b0 $
+1#
+0"
+0!
+$end
+#10000
+1"
+1(
+0#
+0'
+0-
+0,
+0+
+0!
+0)
+0.
+b111 %
+b111 *
+b1000 $
+b1000 &
+#20000
+1!
+1)
+0"
+0(
+b1100 %
+b1100 *
+b11 $
+b11 &
+#30000
+1"
+1(
+0!
+0)
+1-
+1,
+1.
+b1010 %
+b1010 *
+b1011 $
+b1011 &
+#40000
+0!
+0)
+1#
+1'
+0"
+0(
+1+
+b1111 %
+b1111 *
+b1111 $
+b1111 &
+#50000
+1!
+1)
+0#
+0'
+0"
+0(
+0+
+0,
+b110 %
+b110 *
+b101 $
+b101 &
+#60000
