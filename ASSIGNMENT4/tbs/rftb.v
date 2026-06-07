@@ -28,7 +28,8 @@ module tb_register_file();
         .read_data2(read_data2)
     );
 
-    // Clock generation (10ns period)
+    // Clock generation (10ns period) - Fixed Race Condition
+    initial clk = 0; 
     always #5 clk = ~clk;
 
     initial begin
@@ -36,8 +37,7 @@ module tb_register_file();
         $dumpfile("register_file.vcd");
         $dumpvars(0, tb_register_file);
 
-        // Initialize Inputs
-        clk = 0;
+        // Initialize Inputs (Except clk)
         rst = 0;
         write_enable = 0;
         write_address = 0;
@@ -53,6 +53,7 @@ module tb_register_file();
 
         // 2. Test Register Write
         $display("Writing to registers...");
+        
         // Write 5 to R1
         write_enable = 1;
         write_address = 4'd1;
